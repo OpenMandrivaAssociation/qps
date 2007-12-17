@@ -6,7 +6,6 @@ URL:          http://qps.kldp.net
 Source:       %{name}-%{version}.tar.bz2
 License:      GPL
 Group:        Monitoring
-BuildRoot:  %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:  qt3-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  libx11-devel 
