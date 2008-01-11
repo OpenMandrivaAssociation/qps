@@ -57,17 +57,6 @@ install -D -p -m 0644 qps.1 %{buildroot}%{_mandir}/man1/qps.1
 install -D -p -m 0644 icon/icon.xpm %{buildroot}%{_datadir}/pixmaps/qps.xpm
 install  -D -p -m 0644 qps.desktop %{buildroot}%{_datadir}/applications/gps.desktop
 
-mkdir -p %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir},%{_menudir}}
-cat > $RPM_BUILD_ROOT%{_menudir}/%{name} << EOF
-?package(%{name}): \
-command="%{name}" \
-icon="%{name}.png" \
-needs="x11" \
-title="Qps" \
-longtitle="Visual process manager" \
-section="System/Monitoring" \
-xdg="true"
-EOF
 
 convert -size 48x48 icon/icon.xpm $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png 
 convert -size 32x32 icon/icon.xpm $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png 
@@ -95,7 +84,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/qps.xpm
 %{_mandir}/man1/qps.1*
-%{_menudir}/%{name}
 %{_liconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
