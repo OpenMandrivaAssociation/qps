@@ -49,8 +49,6 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
-
 ##install missing
 install -D -p -m 0755 -s qps %{buildroot}%{_bindir}/qps
 install -D -p -m 0644 qps.1 %{buildroot}%{_mandir}/man1/qps.1
