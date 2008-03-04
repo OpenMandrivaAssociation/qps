@@ -42,6 +42,7 @@ Qps can:
 
 %prep
 %setup -q 
+perl -pi -e 's/\.xpm$//' %{name}.desktop
 
 %build
 qmake
