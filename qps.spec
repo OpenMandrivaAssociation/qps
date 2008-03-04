@@ -53,7 +53,6 @@ rm -rf $RPM_BUILD_ROOT
 install -D -p -m 0755 -s qps %{buildroot}%{_bindir}/qps
 install -D -p -m 0644 qps.1 %{buildroot}%{_mandir}/man1/qps.1
 install -D -p -m 0644 icon/icon.xpm %{buildroot}%{_datadir}/pixmaps/qps.xpm
-install  -D -p -m 0644 qps.desktop %{buildroot}%{_datadir}/applications/gps.desktop
 
 install -d $RPM_BUILD_ROOT%{_liconsdir} $RPM_BUILD_ROOT%{_iconsdir} $RPM_BUILD_ROOT%{_miconsdir}
 convert -size 48x48 icon/icon.xpm $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png 
@@ -64,7 +63,7 @@ desktop-file-install --vendor="" \
 --remove-category="Application" \
 --add-category=Monitor \
 --add-category=X-MandrivaLinux-System-Monitoring \
---dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/* 
+--dir $RPM_BUILD_ROOT%{_datadir}/applications %{name}.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
