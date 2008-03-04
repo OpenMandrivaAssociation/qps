@@ -45,7 +45,7 @@ Qps can:
 perl -pi -e 's/\.xpm$//' %{name}.desktop
 
 %build
-qmake
+$QTDIR/bin/qmake
 make
 
 %install
