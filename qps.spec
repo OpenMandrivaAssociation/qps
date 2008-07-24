@@ -1,7 +1,7 @@
 Name:         qps
 Summary:      Visual process manager
 Version:      1.9.20
-Release:      %mkrel 1
+Release:      %mkrel 3
 URL:          http://qps.kldp.net
 Source:       %{name}-%{version}.tar.bz2
 License:      GPL
