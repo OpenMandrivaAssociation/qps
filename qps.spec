@@ -10,7 +10,7 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:  qt3-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  libx11-devel 
-BuildRequires:  ImageMagick
+BuildRequires:  imagemagick
 
 %description
 Qps is a visual process manager, an X11 version of "top" or "ps" that 
