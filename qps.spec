@@ -1,13 +1,13 @@
 Name:         qps
 Summary:      Visual process manager
-Version:      1.9.20
-Release:      %mkrel 4
+Version:      1.10.8.4
+Release:      %mkrel 1
 URL:          http://qps.kldp.net
 Source:       %{name}-%{version}.tar.bz2
 License:      GPL
 Group:        Monitoring
 BuildRoot:  %{_tmppath}/%{name}-%{version}-buildroot
-BuildRequires:  qt3-devel
+BuildRequires:  qt4-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  libx11-devel 
 BuildRequires:  imagemagick
