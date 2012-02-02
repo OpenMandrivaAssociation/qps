@@ -1,12 +1,11 @@
 Name:         qps
 Summary:      Visual process manager
-Version:      1.10.8.4
-Release:      %mkrel 1
+Version:      1.10.16
+Release:      1
 URL:          http://qps.kldp.net
 Source:       %{name}-%{version}.tar.bz2
 License:      GPL
 Group:        Monitoring
-BuildRoot:  %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:  qt4-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  libx11-devel 
@@ -45,11 +44,10 @@ Qps can:
 perl -pi -e 's/\.xpm$//' %{name}.desktop
 
 %build
-$QTDIR/bin/qmake
-make
+%qmake_qt4
+%make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 ##install missing
 install -D -p -m 0755 -s qps %{buildroot}%{_bindir}/qps
 install -D -p -m 0644 qps.1 %{buildroot}%{_mandir}/man1/qps.1
@@ -66,21 +64,7 @@ desktop-file-install --vendor="" \
 --add-category=X-MandrivaLinux-System-Monitoring \
 --dir $RPM_BUILD_ROOT%{_datadir}/applications %{name}.desktop
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
-
 %files 
-%defattr(-,root,root)
 %doc CHANGES COPYING README_INSTALL
 %{_bindir}/*
 %{_datadir}/applications/*
