@@ -74,3 +74,38 @@ desktop-file-install --vendor="" \
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 
+
+
+%changelog
+* Thu Feb 02 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.10.16-1
++ Revision: 770772
+- version update 1.10.16
+
+* Sat Jun 06 2009 Nicolas Lécureuil <nlecureuil@mandriva.com> 1.10.8.4-1mdv2010.0
++ Revision: 383174
+- Update to 1.10.8.4 version ( Qt4 version  )
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - lowercase ImageMagick
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+    - rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Tue Mar 04 2008 Olivier Blin <blino@mandriva.org> 1.9.20-1mdv2008.1
++ Revision: 178467
+- 1.9.20
+- fix build with qt3 by using qt3's qmake
+- remove hardcoded icon extension in desktop file
+- do not run broken make install
+- create icon dirs
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - drop old menu
+    - kill re-definition of %%buildroot on Pixel's request
+    - import qps
+
