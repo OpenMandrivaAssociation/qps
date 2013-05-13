@@ -8,7 +8,7 @@ License:      GPL
 Group:        Monitoring
 BuildRequires:  qt4-devel
 BuildRequires:  desktop-file-utils
-BuildRequires:  libx11-devel 
+BuildRequires:  pkgconfig(x11) 
 BuildRequires:  imagemagick
 
 %description
