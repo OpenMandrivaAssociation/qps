@@ -1,7 +1,7 @@
 Name:         qps
 Summary:      Visual process manager
 Version:      1.10.16
-Release:      1
+Release:      2
 URL:          http://qps.kldp.net
 Source:       %{name}-%{version}.tar.bz2
 License:      GPL
