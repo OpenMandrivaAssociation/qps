@@ -1,7 +1,7 @@
 Name:         qps
 Summary:      Visual process manager
 Version:      1.10.16
-Release:      2
+Release:      3
 URL:          http://qps.kldp.net
 Source:       %{name}-%{version}.tar.bz2
 License:      GPL
@@ -53,16 +53,16 @@ install -D -p -m 0755 -s qps %{buildroot}%{_bindir}/qps
 install -D -p -m 0644 qps.1 %{buildroot}%{_mandir}/man1/qps.1
 install -D -p -m 0644 icon/icon.xpm %{buildroot}%{_datadir}/pixmaps/qps.xpm
 
-install -d $RPM_BUILD_ROOT%{_liconsdir} $RPM_BUILD_ROOT%{_iconsdir} $RPM_BUILD_ROOT%{_miconsdir}
-convert -size 48x48 icon/icon.xpm $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png 
-convert -size 32x32 icon/icon.xpm $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png 
-convert -size 16x16 icon/icon.xpm $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
+install -d %{buildroot}%{_liconsdir} %{buildroot}%{_iconsdir} %{buildroot}%{_miconsdir}
+convert -size 48x48 icon/icon.xpm %{buildroot}%{_liconsdir}/%{name}.png 
+convert -size 32x32 icon/icon.xpm %{buildroot}%{_iconsdir}/%{name}.png 
+convert -size 16x16 icon/icon.xpm %{buildroot}%{_miconsdir}/%{name}.png
 
 desktop-file-install --vendor="" \
 --remove-category="Application" \
 --add-category=Monitor \
 --add-category=X-MandrivaLinux-System-Monitoring \
---dir $RPM_BUILD_ROOT%{_datadir}/applications %{name}.desktop
+--dir %{buildroot}%{_datadir}/applications %{name}.desktop
 
 %files 
 %doc CHANGES COPYING README_INSTALL
