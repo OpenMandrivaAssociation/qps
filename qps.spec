@@ -2,13 +2,18 @@
 
 Name:         qps
 Summary:      Visual process manager
-Version:      1.10.16
-Release:      4
+Version:      1.10.18
+Release:      1
 URL:          http://qps.kldp.net
-Source:       %{name}-%{version}.tar.bz2
+Source0:      https://downloads.lxqt.org/downloads/qps/1.10.18/qps-1.10.18.tar.xz
 License:      GPL
 Group:        Monitoring
-BuildRequires:  qt4-devel
+BuildRequires:	cmake ninja
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5X11Extras)
+BuildRequires:	cmake(Qt5DBus)
+BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:  desktop-file-utils
 BuildRequires:  pkgconfig(x11) 
 BuildRequires:  imagemagick
@@ -46,68 +51,16 @@ Qps can:
 perl -pi -e 's/\.xpm$//' %{name}.desktop
 
 %build
-%qmake_qt4
-%make
+%cmake_qt5 -G Ninja
+%ninja_build
 
 %install
-##install missing
-install -D -p -m 0755 -s qps %{buildroot}%{_bindir}/qps
-install -D -p -m 0644 qps.1 %{buildroot}%{_mandir}/man1/qps.1
-install -D -p -m 0644 icon/icon.xpm %{buildroot}%{_datadir}/pixmaps/qps.xpm
-
-install -d %{buildroot}%{_liconsdir} %{buildroot}%{_iconsdir} %{buildroot}%{_miconsdir}
-convert -size 48x48 icon/icon.xpm %{buildroot}%{_liconsdir}/%{name}.png 
-convert -size 32x32 icon/icon.xpm %{buildroot}%{_iconsdir}/%{name}.png 
-convert -size 16x16 icon/icon.xpm %{buildroot}%{_miconsdir}/%{name}.png
-
-desktop-file-install --vendor="" \
---remove-category="Application" \
---add-category=Monitor \
---add-category=X-MandrivaLinux-System-Monitoring \
---dir %{buildroot}%{_datadir}/applications %{name}.desktop
+%ninja_install -C build
 
 %files 
-%doc CHANGES COPYING README_INSTALL
+%license COPYING
 %{_bindir}/*
-%{_datadir}/applications/*
-%{_datadir}/pixmaps/qps.xpm
-%{_mandir}/man1/qps.1*
-%{_liconsdir}/%{name}.png
-%{_iconsdir}/%{name}.png
-%{_miconsdir}/%{name}.png
-
-
-
-%changelog
-* Thu Feb 02 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.10.16-1
-+ Revision: 770772
-- version update 1.10.16
-
-* Sat Jun 06 2009 Nicolas Lécureuil <nlecureuil@mandriva.com> 1.10.8.4-1mdv2010.0
-+ Revision: 383174
-- Update to 1.10.8.4 version ( Qt4 version  )
-
-  + Oden Eriksson <oeriksson@mandriva.com>
-    - lowercase ImageMagick
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - rebuild
-    - rebuild
-
-  + Pixel <pixel@mandriva.com>
-    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
-
-* Tue Mar 04 2008 Olivier Blin <blino@mandriva.org> 1.9.20-1mdv2008.1
-+ Revision: 178467
-- 1.9.20
-- fix build with qt3 by using qt3's qmake
-- remove hardcoded icon extension in desktop file
-- do not run broken make install
-- create icon dirs
-- restore BuildRoot
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - drop old menu
-    - kill re-definition of %%buildroot on Pixel's request
-    - import qps
-
+%{_datadir}/applications/*.desktop
+%{_datadir}/qps
+%{_datadir}/icons/*/*/*/qps.*
+%{_mandir}/man1/*
