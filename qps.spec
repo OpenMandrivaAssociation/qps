@@ -8,15 +8,17 @@ URL:          http://qps.kldp.net
 Source0:      https://downloads.lxqt.org/downloads/qps/1.10.18/qps-1.10.18.tar.xz
 License:      GPL
 Group:        Monitoring
-BuildRequires:	cmake ninja
+BuildRequires:	cmake
+BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5LinguistTools)
-BuildRequires:  desktop-file-utils
-BuildRequires:  pkgconfig(x11) 
-BuildRequires:  imagemagick
+BuildRequires:	desktop-file-utils
+BuildRequires:	pkgconfig(x11)
+BuildRequires:  pkgconfig(xrender)
+BuildRequires:	imagemagick
 
 %description
 Qps is a visual process manager, an X11 version of "top" or "ps" that 
