@@ -2,10 +2,10 @@
 
 Name:         qps
 Summary:      Visual process manager
-Version:      1.10.18
-Release:      2
+Version:      1.10.19
+Release:      1
 URL:          http://qps.kldp.net
-Source0:      https://downloads.lxqt.org/downloads/qps/1.10.18/qps-1.10.18.tar.xz
+Source0:      https://downloads.lxqt.org/downloads/qps/%{version}/qps-%{version}.tar.xz
 License:      GPL
 Group:        Monitoring
 BuildRequires:	cmake
