@@ -15,6 +15,7 @@ BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5LinguistTools)
+BuildRequires:	cmake(lxqt-build-tools)
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xrender)
