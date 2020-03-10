@@ -1,13 +1,13 @@
 %define debug_package %{nil}
 
-Name:         qps
-Summary:      Visual process manager
-Version:      1.10.19
-Release:      1
-URL:          http://qps.kldp.net
-Source0:      https://downloads.lxqt.org/downloads/qps/%{version}/qps-%{version}.tar.xz
-License:      GPL
-Group:        Monitoring
+Name:		qps
+Summary:	Visual process manager
+Version:	2.0.0
+Release:	1
+URL:		http://qps.kldp.net
+Source0:	https://downloads.lxqt.org/downloads/qps/%{version}/qps-%{version}.tar.xz
+License:	GPL
+Group:		Monitoring
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
@@ -17,14 +17,14 @@ BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(x11)
-BuildRequires:  pkgconfig(xrender)
+BuildRequires:	pkgconfig(xrender)
 BuildRequires:	imagemagick
 
 %description
 Qps is a visual process manager, an X11 version of "top" or "ps" that 
 displays processes in a window and lets you sort and manipulate them. 
 
-Qps can: 
+Qps can:
   o  Change nice value of a process.
   o  Alter the scheduling policy and soft realtime priority of a process.
   o  Display the TCP/UDP sockets used by a process, and names of the 
@@ -49,8 +49,7 @@ Qps can:
   Qps runs on Linux and Solaris.
 
 %prep
-%setup -q 
-perl -pi -e 's/\.xpm$//' %{name}.desktop
+%autosetup -p1
 
 %build
 %cmake_qt5 -G Ninja
@@ -59,7 +58,7 @@ perl -pi -e 's/\.xpm$//' %{name}.desktop
 %install
 %ninja_install -C build
 
-%files 
+%files
 %license COPYING
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
