@@ -2,20 +2,19 @@
 
 Name:		qps
 Summary:	Visual process manager
-Version:	2.0.0
+Version:	2.3.0
 Release:	1
-URL:		http://qps.kldp.net
-Source0:	https://downloads.lxqt.org/downloads/qps/%{version}/qps-%{version}.tar.xz
+URL:		https://github.com/lxqt/qps
+Source0:	https://github.com/lxqt/qps/archive/%{version}/%{name}-%{version}.tar.xz
 License:	GPL
 Group:		Monitoring
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(lxqt-build-tools)
+BuildRequires:	cmake(lxqt)
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xrender)
