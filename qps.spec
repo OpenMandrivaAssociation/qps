@@ -1,5 +1,3 @@
-%define debug_package %{nil}
-
 Name:		qps
 Summary:	Visual process manager
 Version:	2.3.0
