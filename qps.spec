@@ -1,9 +1,9 @@
 Name:		qps
 Summary:	Visual process manager
-Version:	2.3.0
+Version:	2.4.0
 Release:	1
 URL:		https://github.com/lxqt/qps
-Source0:	https://github.com/lxqt/qps/archive/%{version}/%{name}-%{version}.tar.xz
+Source0:	https://github.com/lxqt/qps/releases/download/%{version}/%{name}-%{version}.tar.xz
 License:	GPL
 Group:		Monitoring
 BuildRequires:	cmake(ECM)
