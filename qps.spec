@@ -1,6 +1,6 @@
 Name:		qps
 Summary:	Visual process manager
-Version:	2.4.0
+Version:	2.5.0
 Release:	1
 URL:		https://github.com/lxqt/qps
 Source0:	https://github.com/lxqt/qps/releases/download/%{version}/%{name}-%{version}.tar.xz
@@ -62,4 +62,4 @@ Qps can:
 %{_datadir}/applications/*.desktop
 %{_datadir}/qps
 %{_datadir}/icons/*/*/*/qps.*
-%{_mandir}/man1/*
+%doc %{_mandir}/man1/*
