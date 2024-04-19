@@ -1,17 +1,16 @@
 Name:		qps
 Summary:	Visual process manager
-Version:	2.8.0
+Version:	2.9.0
 Release:	1
 URL:		https://github.com/lxqt/qps
 Source0:	https://github.com/lxqt/qps/releases/download/%{version}/%{name}-%{version}.tar.xz
 License:	GPL
 Group:		Monitoring
 BuildRequires:	cmake(ECM)
-BuildRequires:	cmake(Qt5Widgets)
-BuildRequires:	cmake(Qt5X11Extras)
-BuildRequires:	cmake(Qt5DBus)
-BuildRequires:	cmake(Qt5LinguistTools)
-BuildRequires:	cmake(lxqt-build-tools)
+BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:	cmake(Qt6DBus)
+BuildRequires:	cmake(Qt6LinguistTools)
+BuildRequires:	cmake(lxqt2-build-tools)
 BuildRequires:	cmake(lxqt)
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(x11)
