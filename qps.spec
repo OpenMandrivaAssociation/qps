@@ -1,7 +1,7 @@
 Name:		qps
 Summary:	Visual process manager
 Version:	2.11.1
-Release:	1
+Release:	2
 URL:		https://github.com/lxqt/qps
 Source0:	https://github.com/lxqt/qps/releases/download/%{version}/%{name}-%{version}.tar.xz
 License:	GPL
