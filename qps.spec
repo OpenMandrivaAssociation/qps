@@ -17,6 +17,9 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xrender)
 BuildRequires:	imagemagick
 
+%patchlist
+qps-qt-6.10.patch
+
 %description
 Qps is a visual process manager, an X11 version of "top" or "ps" that 
 displays processes in a window and lets you sort and manipulate them. 
@@ -49,7 +52,7 @@ Qps can:
 %autosetup -p1
 
 %build
-%cmake_qt5 -G Ninja
+%cmake -G Ninja
 %ninja_build
 
 %install
